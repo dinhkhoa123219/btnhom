@@ -101,3 +101,15 @@ int Question::CorrectAnswer()
         }
     }
  }
+void Question::addCorrectChoice()
+{
+    for (int i = 0; i < choice.size(); i++)
+    {
+        if (choice[i].getScore() > 0)
+        {
+            
+            string temp = to_string(choice[i].getOrder());
+            CorrectChoice.push_back(temp);
+        }
+    }
+}

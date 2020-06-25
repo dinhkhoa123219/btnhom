@@ -1,6 +1,6 @@
 ﻿  Source.cpp
 C:\Users\nguye\source\repos\btnhom\btnhom\Source.cpp(59,28): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
 C:\Users\nguye\source\repos\btnhom\btnhom\Source.cpp(59,35): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
-C:\Users\nguye\source\repos\btnhom\btnhom\Source.cpp(102,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\nguye\source\repos\btnhom\btnhom\Source.cpp(105,20): warning C4102: 'Enter_the_answer': unreferenced label
+C:\Users\nguye\source\repos\btnhom\btnhom\Source.cpp(103,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nguye\source\repos\btnhom\btnhom\Source.cpp(115,22): warning C4018: '<': signed/unsigned mismatch
   btnhom.vcxproj -> C:\Users\nguye\source\repos\btnhom\Debug\btnhom.exe

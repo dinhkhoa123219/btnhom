@@ -115,6 +115,7 @@ void Quiz::importFromFile(string filename)
 		q.choice.push_back(c);
 		}
 		q.SortChoice();
+		q.addCorrectChoice();
 		list_Question.push_back(q);
 	}
 	fileInput.close();

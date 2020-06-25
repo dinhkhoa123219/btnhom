@@ -71,7 +71,6 @@ void Menu()
 	textcolor(10);
 	string name1;
 	string filename;
-	int get_ans;
 	gotoxy(25, 9);  cout <<" .----------------.  .----------------.  .----------------.  .----------------.  .----------------. ";
 	gotoxy(25, 10); cout <<"| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |";
 	gotoxy(25, 11); cout <<"| |    ___       | || |  ___    ___  | || |     _____    | || |   ________   | || |   ________   | |";
@@ -99,17 +98,26 @@ Enter_filename:
 	Q.importFromFile(filename);
 	int score_quizz = 0;
 	cout << endl << endl;
+
 	for (int i = 0; i < Q.list_Question.size(); i++)
 	{
-		cout << Q.list_Question[i] << endl;
-		Enter_the_answer :
-		cout << " Please tpye 1 or 2 or 3 or 4 to answer the question : ";
-		cin >> get_ans;
-		//if (get_ans != 1 || get_ans != 2 || get_ans != 3 || get_ans != 4)
-		//	goto Enter_the_answer;
-		cout << "Cau tra loi dung la : " << Q.list_Question[i].CorrectAnswer() << endl;
-		if (get_ans == Q.list_Question[i].CorrectAnswer())
-			score_quizz = score_quizz + Q.list_Question[i].choice[Q.list_Question[i].CorrectAnswer()-1].getScore();
+		if (Q.list_Question[i].getType() == 0)
+		{
+			int get_ans;
+			cout << Q.list_Question[i] << endl;
+			Enter_the_answer:
+			cout << " Please tpye 1 or 2 or 3 or 4 to answer the question : ";
+			cin >> get_ans;
+			while (get_ans != 1 && get_ans != 2 &&get_ans!=3&&get_ans!=4)
+				goto Enter_the_answer;
+			if (get_ans == Q.list_Question[i].CorrectAnswer())
+				score_quizz = score_quizz + Q.list_Question[i].choice[Q.list_Question[i].CorrectAnswer() - 1].getScore();
+			for (int j = 0; j < Q.list_Question[i].CorrectChoice.size();j++)
+			{
+				cout << Q.list_Question[i].CorrectChoice[j] << endl;
+			}
+
+		}
 	}
 	cout << " Point : "<<score_quizz << endl;
 }
